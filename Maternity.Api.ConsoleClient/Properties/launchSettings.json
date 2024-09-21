@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Maternity.Api.ConsoleClient": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
