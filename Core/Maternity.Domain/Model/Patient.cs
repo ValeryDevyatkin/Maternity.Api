@@ -1,4 +1,4 @@
-﻿using Maternity.Domain.Common;
+﻿using Maternity.Domain.Model.Common;
 using System.ComponentModel.DataAnnotations;
 
 namespace Maternity.Domain.Model;

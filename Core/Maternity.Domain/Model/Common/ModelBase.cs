@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Maternity.Domain.Common;
+namespace Maternity.Domain.Model.Common;
 
 public abstract class ModelBase
 {
