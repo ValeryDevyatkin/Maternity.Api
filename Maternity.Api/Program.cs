@@ -5,7 +5,6 @@ using Maternity.Persistence.Context;
 using Maternity.Persistence.Repository;
 using Maternity.Persistence.Repository.Common;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -23,9 +22,9 @@ public class Program
         builder.Services.AddDbContext<MaternityDbContext>(options => options.UseNpgsql(connectionString));
         builder.Services.AddAutoMapper(typeof(PatientProfile));
 
-        builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-        builder.Services.AddTransient<IPatientRepository, PatientRepository>();
-        builder.Services.AddSingleton<PatientService>();
+        builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+        builder.Services.AddScoped<PatientService>();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,4 +1,5 @@
 using Maternity.Application.Dto;
+using Maternity.Application.Features.Patients;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Maternity.Api.Controllers;
@@ -8,10 +9,14 @@ namespace Maternity.Api.Controllers;
 public class PatientController : ControllerBase
 {
     private readonly ILogger<PatientController> _logger;
+    private readonly PatientService _patinetService;
 
-    public PatientController(ILogger<PatientController> logger)
+    public PatientController(
+        ILogger<PatientController> logger,
+        PatientService patinetService)
     {
         _logger = logger;
+        _patinetService = patinetService;
     }
 
     /// <summary>
@@ -20,7 +25,16 @@ public class PatientController : ControllerBase
     [HttpGet(Name = "Get Patients")]
     public async Task<ActionResult<IEnumerable<PatientDto>>> Get()
     {
-        throw new NotImplementedException();
+        try
+        {
+            var patients = await _patinetService.GetManyAsync();
+
+            return Ok(patients);
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
     }
 
     /// <summary>
@@ -29,7 +43,21 @@ public class PatientController : ControllerBase
     [HttpGet("{id}", Name = "Get Patient By Id")]
     public async Task<ActionResult<PatientDto>> Get(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var patient = await _patinetService.GetByIdAsync(id);
+
+            if (patient == null)
+            {
+                return NotFound(id);
+            }
+
+            return Ok(patient);
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
     }
 
     /// <summary>
@@ -38,16 +66,52 @@ public class PatientController : ControllerBase
     [HttpPost(Name = "Create Patient")]
     public async Task<ActionResult<PatientDto>> Create(PatientDto dto)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var patient = await _patinetService.CreateAsync(dto);
+
+            return Ok(patient);
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
+    }
+
+    /// <summary>
+    /// Create Many Patients.
+    /// </summary>
+    [HttpPost("bulk", Name = "Create Many Patients.")]
+    public async Task<ActionResult> CreateMany(IEnumerable<PatientDto> dtoList)
+    {
+        try
+        {
+            await _patinetService.CreateManyAsync(dtoList);
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
     }
 
     /// <summary>
     /// Update Patient.
     /// </summary>
     [HttpPut(Name = "Update Patient")]
-    public async Task<ActionResult<PatientDto>> Update(PatientDto dto)
+    public async Task<ActionResult> Update(PatientDto dto)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _patinetService.UpdateAsync(dto);
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
     }
 
     /// <summary>
@@ -56,6 +120,27 @@ public class PatientController : ControllerBase
     [HttpDelete(Name = "Delete Patient")]
     public async Task<ActionResult<PatientDto>> Delete(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var isSuccess = await _patinetService.DeleteAsync(id);
+
+            if (isSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(id);
+        }
+        catch (Exception ex)
+        {
+            return LogErrorAndReturnResult(ex);
+        }
+    }
+
+    private ActionResult LogErrorAndReturnResult(Exception ex)
+    {
+        _logger.LogError(ex, ex.Message);
+
+        return BadRequest(ex.Message);
     }
 }

@@ -2,4 +2,7 @@
 
 public interface IUnitOfWork
 {
+    IPatientRepository PatientRepository { get; }
+
+    public Task SaveChangesAsync();
 }
