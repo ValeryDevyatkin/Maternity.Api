@@ -19,3 +19,5 @@ services:
       dockerfile: Maternity.Api/Dockerfile
     depends_on:
         - "app_database"
+    ports:
+        - "5082:8081"
