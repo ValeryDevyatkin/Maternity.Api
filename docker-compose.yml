@@ -1,0 +1,19 @@
+services:
+
+  app_database:
+    image: postgres:latest
+    container_name: maternity_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=maternity
+    ports:
+      - 5432:5433
+
+    restart: always
+
+  maternity.api:
+    image: ${DOCKER_REGISTRY-}maternityapi
+    build:
+      context: .
+      dockerfile: Maternity.Api/Dockerfile

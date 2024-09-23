@@ -26,7 +26,8 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : ModelBase
     {
         var item = await Context.Set<T>().FindAsync(id);
 
-        if (item == null) {
+        if (item == null)
+        {
             return false;
         }
 

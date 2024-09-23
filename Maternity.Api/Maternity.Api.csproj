@@ -10,6 +10,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>756f1cc1-d287-4c4a-a24a-a167bb306ab9</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,7 +20,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Core\Maternity.Application\Maternity.Application.csproj" />
-		<ProjectReference Include="..\Maternity.Persistence\Maternity.Persistence.csproj" />
+		<ProjectReference Include="..\Infrastructure\Maternity.Persistence\Maternity.Persistence.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -13,9 +13,6 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Maternity.Api/Maternity.Api.csproj", "Maternity.Api/"]
-COPY ["Core/Maternity.Application/Maternity.Application.csproj", "Core/Maternity.Application/"]
-COPY ["Core/Maternity.Domain/Maternity.Domain.csproj", "Core/Maternity.Domain/"]
-COPY ["Infrastructure/Maternity.Persistence/Maternity.Persistence.csproj", "Infrastructure/Maternity.Persistence/"]
 RUN dotnet restore "./Maternity.Api/Maternity.Api.csproj"
 COPY . .
 WORKDIR "/src/Maternity.Api"
