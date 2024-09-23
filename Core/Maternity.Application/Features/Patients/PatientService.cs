@@ -16,9 +16,9 @@ public class PatientService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<PatientDto>> GetManyAsync()
+    public async Task<IEnumerable<PatientDto>> GetManyAsync(PatientFilter filter)
     {
-        var models = await _unitOfWork.PatientRepository.GetManyAsync();
+        var models = await _unitOfWork.PatientRepository.GetManyAsync(filter);
         var dtoList = _mapper.Map<IEnumerable<PatientDto>>(models);
 
         return dtoList;

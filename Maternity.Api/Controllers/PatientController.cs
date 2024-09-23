@@ -20,14 +20,14 @@ public class PatientsController : ControllerBase
     }
 
     /// <summary>
-    /// Get Patients.
+    /// Get Patients. Following date filtering options are available: eq, ne, le, ge.
     /// </summary>
     [HttpGet(Name = "Get Patients")]
-    public async Task<ActionResult<IEnumerable<PatientDto>>> Get()
+    public async Task<ActionResult<IEnumerable<PatientDto>>> Get([FromQuery] PatientFilter filter)
     {
         try
         {
-            var patients = await _patinetService.GetManyAsync();
+            var patients = await _patinetService.GetManyAsync(filter);
 
             return Ok(patients);
         }
