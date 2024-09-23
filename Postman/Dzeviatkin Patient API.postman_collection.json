@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "3f65b762-c2a3-46d9-affa-f6f0d1d12f78",
+		"name": "Dzeviatkin Patient API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16455031"
+	},
+	"item": [
+		{
+			"name": "Create Patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"familyName\": \"Sidorov\",\r\n  \"name\": [\r\n    \"Ivan\",\r\n    \"Petrovich\"\r\n  ],\r\n  \"birthDate\": \"2024-09-23T21:44:12.872Z\",\r\n  \"gender\": \"Male\",\r\n  \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5082/api/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Patient By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients/103",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients",
+						"103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"familyName\": \"Ivanov\",\r\n    \"name\": [\r\n        \"Ivan\",\r\n        \"Petrovich\"\r\n    ],\r\n    \"birthDate\": \"2024-09-23T21:44:12.872Z\",\r\n    \"gender\": \"Male\",\r\n    \"active\": false,\r\n    \"id\": 103\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5082/api/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Patient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients?id=103",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "103"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients (eq)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients?dateFilter=eq2023-11-23T21:42:42.499965",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "dateFilter",
+							"value": "eq2023-11-23T21:42:42.499965"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients (ne)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients?dateFilter=nq2023-11-23T21:42:42.499965",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "dateFilter",
+							"value": "nq2023-11-23T21:42:42.499965"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients (le)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients?dateFilter=le2020-08-23T21:42:42.499976",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "dateFilter",
+							"value": "le2020-08-23T21:42:42.499976"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients (ge)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5082/api/patients?dateFilter=ge2020-08-23T21:42:42.499976",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5082",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "dateFilter",
+							"value": "ge2020-08-23T21:42:42.499976"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
