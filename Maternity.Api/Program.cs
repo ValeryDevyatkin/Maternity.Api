@@ -20,6 +20,13 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddDbContext<MaternityDbContext>(options => options.UseNpgsql(connectionString));
+
+        using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<MaternityDbContext>();
+            dbContext.Database.Migrate();
+        }
+
         builder.Services.AddAutoMapper(typeof(PatientProfile));
 
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

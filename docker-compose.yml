@@ -7,8 +7,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123
       - POSTGRES_DB=maternity
-    ports:
-      - 5432:5433
+    expose: 
+      - "5432"
 
     restart: always
 
@@ -17,3 +17,5 @@ services:
     build:
       context: .
       dockerfile: Maternity.Api/Dockerfile
+    depends_on:
+        - "app_database"
