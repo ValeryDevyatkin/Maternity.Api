@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maternity.Api", "Maternity.Api\Maternity.Api.csproj", "{EF5BE91D-35CB-4FAB-9644-2E63C37C116C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maternity.Api.ConsoleClient", "Maternity.Api.ConsoleClient\Maternity.Api.ConsoleClient.csproj", "{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6D2DC7F4-EC31-4ABF-A605-188CA44302CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9F2A85F4-460A-432A-8D38-45BEC41EF6FA}"
@@ -19,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maternity.Application", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maternity.Persistence", "Infrastructure\Maternity.Persistence\Maternity.Persistence.csproj", "{2E95F7EC-4724-4BC8-BC0F-1B47F0A0AEBD}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4FD44E82-D8CB-4D11-93F8-4EB336D7CF2B}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7C6F8F4C-518F-401C-8EB4-C3954A0DE923}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{EF5BE91D-35CB-4FAB-9644-2E63C37C116C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF5BE91D-35CB-4FAB-9644-2E63C37C116C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF5BE91D-35CB-4FAB-9644-2E63C37C116C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAE643AE-A381-40D5-8FB7-0E7BEB90DC00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AAE643AE-A381-40D5-8FB7-0E7BEB90DC00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE643AE-A381-40D5-8FB7-0E7BEB90DC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,17 +41,16 @@ Global
 		{2E95F7EC-4724-4BC8-BC0F-1B47F0A0AEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E95F7EC-4724-4BC8-BC0F-1B47F0A0AEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E95F7EC-4724-4BC8-BC0F-1B47F0A0AEBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FD44E82-D8CB-4D11-93F8-4EB336D7CF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FD44E82-D8CB-4D11-93F8-4EB336D7CF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FD44E82-D8CB-4D11-93F8-4EB336D7CF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FD44E82-D8CB-4D11-93F8-4EB336D7CF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6F8F4C-518F-401C-8EB4-C3954A0DE923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6F8F4C-518F-401C-8EB4-C3954A0DE923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6F8F4C-518F-401C-8EB4-C3954A0DE923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6F8F4C-518F-401C-8EB4-C3954A0DE923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EF5BE91D-35CB-4FAB-9644-2E63C37C116C} = {6D2DC7F4-EC31-4ABF-A605-188CA44302CD}
-		{0DC0DEB5-CC44-4C0C-881E-C610DD24F3D7} = {6D2DC7F4-EC31-4ABF-A605-188CA44302CD}
 		{AAE643AE-A381-40D5-8FB7-0E7BEB90DC00} = {9F2A85F4-460A-432A-8D38-45BEC41EF6FA}
 		{0D83D819-BEAD-4021-87D7-7DB03D734C97} = {9F2A85F4-460A-432A-8D38-45BEC41EF6FA}
 		{2E95F7EC-4724-4BC8-BC0F-1B47F0A0AEBD} = {3AFEF777-7486-44C4-A62B-32011FF5E94C}

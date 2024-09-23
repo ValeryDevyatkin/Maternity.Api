@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>4fd44e82-d8cb-4d11-93f8-4eb336d7cf2b</ProjectGuid>
+    <ProjectGuid>7c6f8f4c-518f-401c-8eb4-c3954a0de923</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>maternity.api</DockerServiceName>
