@@ -53,6 +53,7 @@ public class PatientService
     public async Task UpdateAsync(PatientDto dto)
     {
         var model = _mapper.Map<Patient>(dto);
+        await _unitOfWork.PatientRepository.UpdateAsync(model);
         await _unitOfWork.SaveChangesAsync();
     }
 
