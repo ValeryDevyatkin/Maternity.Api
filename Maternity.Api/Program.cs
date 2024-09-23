@@ -19,6 +19,7 @@ public class Program
 
         // Add services to the container.
 
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         builder.Services.AddDbContext<MaternityDbContext>(options => options.UseNpgsql(connectionString));
 
         using (var scope = builder.Services.BuildServiceProvider().CreateScope())

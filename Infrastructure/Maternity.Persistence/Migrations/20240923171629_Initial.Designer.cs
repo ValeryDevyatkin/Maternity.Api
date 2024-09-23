@@ -37,7 +37,7 @@ namespace Maternity.Persistence.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("FamilyName")
                         .IsRequired()
