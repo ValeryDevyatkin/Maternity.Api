@@ -6,13 +6,13 @@ namespace Maternity.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class PatientController : ControllerBase
+public class PatientsController : ControllerBase
 {
-    private readonly ILogger<PatientController> _logger;
+    private readonly ILogger<PatientsController> _logger;
     private readonly PatientService _patinetService;
 
-    public PatientController(
-        ILogger<PatientController> logger,
+    public PatientsController(
+        ILogger<PatientsController> logger,
         PatientService patinetService)
     {
         _logger = logger;
